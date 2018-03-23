@@ -35,7 +35,7 @@ else:
 
     msg = '\r\n'.join([
         'From: AUTO JOB FINDER',
-        'To: bradley.houglum@icloud.com',
+        'To: *',
         'Subject: NEW JOB FOUND!!',
         '',
         'GO LOOK AT THE WEBSITE, FOOL.' + '\n\n' + str(msgbody),
