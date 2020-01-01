@@ -3,15 +3,15 @@ import requests
 import smtplib
 import re
 
-url = 'http://management.jobshq.com/search/location/DETROIT%20LAKES,%20MN/radius/10/sortKey/score/'
+url = '<SAVED URL FOR THE WEB SITE YOU WANT TO SEARCH>'
 link = requests.get(url)
 soup = BeautifulSoup(link.content, 'html.parser')
 
-fromaddr = '*'
-toaddr = '*'
+fromaddr = '<YOUR EMAIL>'
+toaddr = '<TO EMAIL>'
 jobs = []
 username = fromaddr
-password = '*'
+password = '<PASSWORD FOR EMAIL SERVER>'
 server = smtplib.SMTP('smtp.gmail.com:587')
 
 test = soup.find('p', text=re.compile('No search results found. Please try another search.'))
@@ -35,7 +35,7 @@ else:
 
     msg = '\r\n'.join([
         'From: AUTO JOB FINDER',
-        'To: *',
+        'To: 'toaddr',
         'Subject: NEW JOB FOUND!!',
         '',
         'GO LOOK AT THE WEBSITE, FOOL.' + '\n\n' + str(msgbody),
